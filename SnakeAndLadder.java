@@ -1,4 +1,4 @@
-package UC5;
+package UC6;
 
 import java.util.Random;
 
@@ -6,9 +6,11 @@ public class SnakeAndLadder {
     static void exactWin() {
         int winningPosition = 100;
         int playerPosition = 0;
+        int moves = 0;
         Random random = new Random();
 
         while (playerPosition != winningPosition) {
+            moves++;
 
             int rollTheDice = random.nextInt(6)+1;
             System.out.println("After rolling the dice : "+rollTheDice);
@@ -34,8 +36,10 @@ public class SnakeAndLadder {
                 System.out.println("Snake : "+playerPosition);
             }
         }
+        System.out.println("Number Of Total Moves : "+moves);
     }
     public static void main(String[] args) {
         exactWin();
     }
+
 }
